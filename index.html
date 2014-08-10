@@ -1,0 +1,27 @@
+<html ng-app>
+  <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script src="lib/socket.io.js"></script>
+    <script src="lib/atomic.js"></script>
+    <script src="lib/amplify.core.js"></script>
+    <script src="lib/appbase.js">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.21/angular.min.js">
+    </script>
+    <script src="script.js"></script>
+  </head>
+  <body ng-controller="SoundCtrl">
+    <div class="col">
+      <div class="col-offset-md-1">
+      </div>
+      <div ng-repeat="sound in sounds" class="col-md-2">
+        <button class="btn"
+                ng-class="{'btn-success':sound.playing, 'btn-danger':!sound.playing}"
+                ng-click="toggleSound(sound, $index)"
+                ng-bind="sound.label" />
+      </div>
+    </div>
+
+  </body>
+</html>
