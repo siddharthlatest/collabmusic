@@ -18,7 +18,7 @@
       <div ng-repeat="sound in sounds" class="col-md-2">
         <button class="btn"
                 ng-class="{'btn-success':sound.playing, 'btn-danger':!sound.playing}"
-                ng-click="toggleSound(sound, $index)"
+                ng-click="toggleSound(sound, $index); setSound(sound, $index)"
                 ng-bind="sound.label" />
       </div>
     </div>
